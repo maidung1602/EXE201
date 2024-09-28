@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-	faLocationPin,
+	faLocationDot,
 	faPhone,
 	faEnvelope
 } from "@fortawesome/free-solid-svg-icons";
@@ -22,7 +22,7 @@ const Footer = (props) => {
 						<div className="col-span-3 flex flex-col py-6 ">
 							<h5>Địa chỉ</h5>
 							<div className="flex space-x-4 py-3">
-								<FontAwesomeIcon icon={faLocationPin} style={{ fontSize: '1.5rem' }} className="text-gray-400 hover:text-white" />
+								<FontAwesomeIcon icon={faLocationDot} style={{ fontSize: '1.5rem' }} className="text-gray-400 hover:text-white" />
 								<a
 									href="https://maps.app.goo.gl/xwzuJz3jK2np5DMw6"
 									target="_blank"
