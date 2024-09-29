@@ -31,6 +31,20 @@ export const CheckoutComponent = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const handleOrder = async () => {
+    try {
+      // const { nonce } = await state.instance.requestPaymentMethod();
+      // const paymentData = {
+      //   paymentMethodNonce: nonce,
+      //   amount: totalCost(data.cartProduct),
+      // };
+      
+      pay(dispatch, state, setState, totalCost(data.cartProduct), history);
+    } catch (error) {
+      setState({ ...state, error: "Payment failed. Please try again." });
+    }
+  };
+
   if (data.loading) {
     return (
       <div className="flex items-center justify-center h-screen">
@@ -48,20 +62,21 @@ export const CheckoutComponent = (props) => {
             d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
           ></path>
         </svg>
-        Please wait untill finish
+        Please wait until finish
       </div>
     );
   }
+
   return (
     <Fragment>
-      <section className="mx-4 mt-20 md:mx-12 md:mt-32 lg:mt-24">
-        <div className="text-2xl mx-2">Order</div>
+      <section className="mx-4 md:mx-12 md:mt-32 lg:mt-24">
+        <h6 className="text-2xl px-48 mt-32 mb-6 text-center">Order</h6>
         {/* Product List */}
-        <div className="flex flex-col md:flex md:space-x-2 md:flex-row">
+        <div className="px-48 flex flex-col md:flex md:space-x-2 md:flex-row">
           <div className="md:w-1/2">
             <CheckoutProducts products={data.cartProduct} />
           </div>
-          <div className="w-full order-first md:order-last md:w-1/2">
+          <div className="w-3/4 order-first md:order-last md:w-1/2 px-24">
             {state.clientToken !== null ? (
               <Fragment>
                 <div
@@ -77,7 +92,7 @@ export const CheckoutComponent = (props) => {
                   )}
                   <div className="flex flex-col py-2">
                     <label htmlFor="address" className="pb-2">
-                      Dalivery Address
+                      Delivery Address
                     </label>
                     <input
                       value={state.address}
@@ -113,32 +128,13 @@ export const CheckoutComponent = (props) => {
                       placeholder="+880"
                     />
                   </div>
-                  <DropIn
-                    options={{
-                      authorization: state.clientToken,
-                      paypal: {
-                        flow: "vault",
-                      },
-                    }}
-                    onInstance={(instance) => (state.instance = instance)}
-                  />
-                  <div
-                    onClick={(e) =>
-                      pay(
-                        data,
-                        dispatch,
-                        state,
-                        setState,
-                        getPaymentProcess,
-                        totalCost,
-                        history
-                      )
-                    }
-                    className="w-full px-4 py-2 text-center text-white font-semibold cursor-pointer"
-                    style={{ background: "#303031" }}
+                  {/* Order Button */}
+                  <button
+                    onClick={handleOrder}
+                    className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-all"
                   >
-                    Pay now
-                  </div>
+                    Place order
+                  </button>
                 </div>
               </Fragment>
             ) : (

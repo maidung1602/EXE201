@@ -44,7 +44,6 @@ const AllCategory = (props) => {
               <th className="px-4 py-2 border">Products</th>
               <th className="px-4 py-2 border">Status</th>
               <th className="px-4 py-2 border">Total</th>
-              <th className="px-4 py-2 border">Transaction Id</th>
               <th className="px-4 py-2 border">Customer</th>
               <th className="px-4 py-2 border">Email</th>
               <th className="px-4 py-2 border">Phone</th>
@@ -138,9 +137,6 @@ const CategoryTable = ({ order, editOrder }) => {
         </td>
         <td className="hover:bg-gray-200 p-2 text-center">
           {order.amount}₫
-        </td>
-        <td className="hover:bg-gray-200 p-2 text-center">
-          {order.transactionId}
         </td>
         <td className="hover:bg-gray-200 p-2 text-center">{order.user.name}</td>
         <td className="hover:bg-gray-200 p-2 text-center">

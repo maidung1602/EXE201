@@ -37,12 +37,11 @@ class Order {
   }
 
   async postCreateOrder(req, res) {
-    let { allProduct, user, amount, transactionId, address, phone } = req.body;
+    let { allProduct, user, amount, address, phone } = req.body;
     if (
       !allProduct ||
       !user ||
       !amount ||
-      !transactionId ||
       !address ||
       !phone
     ) {
@@ -53,7 +52,6 @@ class Order {
           allProduct,
           user,
           amount,
-          transactionId,
           address,
           phone,
         });
@@ -62,7 +60,7 @@ class Order {
           return res.json({ success: "Order created successfully" });
         }
       } catch (err) {
-        return res.json({ error: error });
+        return res.json({ error: err.message });
       }
     }
   }
