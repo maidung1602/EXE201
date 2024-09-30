@@ -78,7 +78,7 @@ const AllProduct = (props) => {
           <thead>
             <tr>
               <th className="px-4 py-2 border">Product</th>
-              <th className="px-4 py-2 border">Description</th>
+              {/* <th className="px-4 py-2 border">Description</th> */}
               <th className="px-4 py-2 border">Image</th>
               <th className="px-4 py-2 border">Status</th>
               <th className="px-4 py-2 border">Stock</th>
@@ -129,13 +129,11 @@ const ProductTable = ({ product, deleteProduct, editProduct }) => {
     <Fragment>
       <tr>
         <td className="p-2 text-left">
-          {product.pName.length > 15
-            ? product.pDescription.substring(1, 15) + "..."
-            : product.pName}
+          {product.pName}
         </td>
-        <td className="p-2 text-left">
+        {/* <td className="p-2 text-left">
           {product.pDescription.slice(0, 15)}...
-        </td>
+        </td> */}
         <td className="p-2 text-center">
           <img
             className="w-12 h-12 object-cover object-center"

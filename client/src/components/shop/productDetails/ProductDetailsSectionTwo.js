@@ -1,12 +1,9 @@
 import React, { Fragment, useContext, useEffect, useState } from "react";
 import AllReviews from "./AllReviews";
 import ReviewForm from "./ReviewForm";
-
 import { ProductDetailsContext } from "./";
 import { LayoutContext } from "../layout";
-
 import { isAuthenticate } from "../auth/fetchApi";
-
 import "./style.css";
 
 const Menu = () => {
@@ -73,7 +70,10 @@ const ProductDetailsSectionTwo = (props) => {
       <section className="m-4 md:mx-12 md:my-8">
         <Menu />
         {data.menu ? (
-          <div className="mt-6">{singleProduct.pDescription}</div>
+          <div
+            className="mt-6"
+            dangerouslySetInnerHTML={{ __html: singleProduct.pDescription }}
+          />
         ) : (
           <RatingReview />
         )}

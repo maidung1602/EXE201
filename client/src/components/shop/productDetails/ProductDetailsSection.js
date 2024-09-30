@@ -216,8 +216,8 @@ const ProductDetailsSection = (props) => {
 									</span>
 								</div>
 							</div>
-							<div className="my-4 md:my-6 text-gray-600">
-								{sProduct.pDescription}
+							<div className="my-4 md:my-6 text-gray-600" 
+								dangerouslySetInnerHTML={{ __html: sProduct.pDescription }}>
 							</div>
 							<div className="my-4 md:my-6">
 								{+quantitiy === +sProduct.pQuantity ? (

@@ -11,7 +11,7 @@ const StoryComponent = () => {
 					<div
 						className="hero-section"
 						style={{
-							backgroundImage: `url('https://cdnphoto.dantri.com.vn/9J6rE2rOLqd246m-_NAsxrr71qQ=/zoom/1200_630/2021/07/14/ho-thi-suong-lan-crop-1626253035534.jpeg')`,
+							backgroundImage: `url('/Slide_2.jpg')`,
 							backgroundSize: "cover",
 							backgroundPosition: "center",
 							color: "#fff",
@@ -25,9 +25,9 @@ const StoryComponent = () => {
 					>
 						<Container>
 							<Row>
-								<Col>
+								<Col style={{color: "#000000"}}>
 									<h1>Hành Trình Của Những Người Thợ</h1>
-									<p>Người thợ của làng nghề truyền thống</p>
+									<h4>Người thợ của làng nghề truyền thống</h4>
 								</Col>
 							</Row>
 						</Container>
@@ -38,7 +38,7 @@ const StoryComponent = () => {
 					<div
 						className="hero-section"
 						style={{
-							backgroundImage: `url('https://khamphahue.com.vn/Portals/0/Medias/Nam2021/T6/184316352_294250192354965_1138601971043634555_n.jpg')`,
+							backgroundImage: `url('Slide_4.jpg')`,
 							backgroundSize: "cover",
 							backgroundPosition: "center",
 							color: "#fff",
@@ -88,7 +88,7 @@ const StoryComponent = () => {
 					<Row className="mb-5">
 						<Col md={4}>
 							<Image
-								src="https://heritagevietnamairlines.cdn.vccloud.vn/wp-content/uploads/2023/07/NTT51371-scaled.jpg"
+								src="/story1.jpg"
 								fluid
 							/>
 						</Col>
@@ -115,7 +115,7 @@ const StoryComponent = () => {
 						</Col>
 						<Col md={6}>
 							<Image
-								src="https://bizweb.dktcdn.net/thumb/grande/100/401/675/files/mayhousedecor-ve-lang-dan-lat-bao-la3.jpg?v=1612687601663"
+								src="/story2.jpg"
 								fluid
 							/>
 						</Col>

@@ -41,17 +41,16 @@ const Footer = (props) => {
 									target="_blank"
 									rel="noopener noreferrer"
 									className="text-white hover:text-white ml-4" style={{ fontSize: '20px', textDecoration: 'none' }}>
-									0834 235 369
+									+84 (0)355 761 159
 								</a>
 							</div>
 							<div className="flex space-x-4 py-2">
 								<FontAwesomeIcon icon={faEnvelope} style={{ fontSize: '1.5rem' }} className="text-gray-400 hover:text-white" />
 								<a
-									href="mailto:ducnmhe173177@fpt.edu.vn"
-									target="_blank"
+									href="mailto:dantamviet@gmail.com"
 									rel="noopener noreferrer"
 									className="text-white hover:text-white ml-4" style={{ fontSize: '20px', textDecoration: 'none' }}>
-									ducnmhe173177@fpt.edu.vn
+									dantamviet@gmail.com
 								</a>
 							</div>
 							<div className="flex space-x-4 py-2">

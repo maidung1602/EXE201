@@ -2,6 +2,8 @@ import React, { Fragment, useContext, useState, useEffect } from "react";
 import { ProductContext } from "./index";
 import { createProduct, getAllProduct } from "./FetchApi";
 import { getAllCategory } from "../categories/FetchApi";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 const AddProductDetail = ({ categories }) => {
   const { data, dispatch } = useContext(ProductContext);
@@ -175,21 +177,18 @@ const AddProductDetail = ({ categories }) => {
             </div>
             <div className="flex flex-col space-y-2">
               <label htmlFor="description">Product Description *</label>
-              <textarea
+              {/* React Quill for Product Description */}
+              <ReactQuill
                 value={fData.pDescription}
-                onChange={(e) =>
+                onChange={(content) =>
                   setFdata({
                     ...fData,
                     error: false,
                     success: false,
-                    pDescription: e.target.value,
+                    pDescription: content,
                   })
                 }
                 className="px-4 py-2 border focus:outline-none"
-                name="description"
-                id="description"
-                cols={5}
-                rows={2}
               />
             </div>
             {/* Most Important part for uploading multiple image */}

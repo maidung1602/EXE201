@@ -2,6 +2,8 @@ import React, { Fragment, useContext, useState, useEffect } from "react";
 import { ProductContext } from "./index";
 import { editProduct, getAllProduct } from "./FetchApi";
 import { getAllCategory } from "../categories/FetchApi";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 const apiURL = process.env.REACT_APP_API_URL;
 
 const EditProductModal = (props) => {
@@ -183,21 +185,25 @@ const EditProductModal = (props) => {
             </div>
             <div className="flex flex-col space-y-2">
               <label htmlFor="description">Product Description *</label>
-              <textarea
-                value={editformData.pDescription}
-                onChange={(e) =>
+              <ReactQuill
+                value={editformData.pDescription} // Bind value from state
+                onChange={(value) =>
                   setEditformdata({
                     ...editformData,
                     error: false,
                     success: false,
-                    pDescription: e.target.value,
+                    pDescription: value, // Update state with Quill's output
                   })
                 }
-                className="px-4 py-2 border focus:outline-none"
-                name="description"
-                id="description"
-                cols={5}
-                rows={2}
+                className="border focus:outline-none"
+                modules={{
+                  toolbar: [
+                    [{ header: [1, 2, false] }],
+                    ["bold", "italic", "underline"],
+                    ["link", "image"],
+                    ["clean"],
+                  ],
+                }}
               />
             </div>
             {/* Most Important part for uploading multiple image */}
